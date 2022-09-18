@@ -54,3 +54,10 @@ class Solution {
         return judge;
     }
 }
+
+/**
+ * Runtime: 10 ms, faster than 71.58% of Java online submissions for Search a 2D
+ * Matrix II.
+ * Memory Usage: 57.3 MB, less than 66.40% of Java online submissions for Search
+ * a 2D Matrix II.
+ */
