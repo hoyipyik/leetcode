@@ -24,6 +24,7 @@
  * 
  * Follow up: Could you minimize the total number of operations done?
  */
+
 class Solution {
     public void moveZeroes(int[] nums) {
         int sorted = 0;
