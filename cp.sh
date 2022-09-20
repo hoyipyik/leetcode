@@ -1,0 +1,1 @@
+cp "./Runtime/env/runtime/Solution.java" "./Archive/array/$1.java"
