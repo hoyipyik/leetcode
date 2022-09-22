@@ -20,7 +20,13 @@ import java.util.List;
  * Input: nums = [4,3,2,7,8,2,3,1]
  * Output: [2,3]
  * Example 2:
+ * 1312
  * 
+ * 1980
+ * 
+ * Add to List
+ * 
+ * Share
  * Input: nums = [1,1,2]
  * Output: [1]
  * Example 3:
