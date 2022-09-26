@@ -49,9 +49,9 @@ class Solution {
     public ListNode removeElements(ListNode head, int val) {
         while (head != null && head.val == val)
             head = head.next;
-        ListNode iter  = head;
-        while(iter != null){
-            while(iter.next != null && iter.next.val == val)
+        ListNode iter = head;
+        while (iter != null) {
+            while (iter.next != null && iter.next.val == val)
                 iter.next = iter.next.next;
             iter = iter.next;
         }
@@ -84,3 +84,34 @@ class AnotherSolution {
     }
 }
 
+// dummmy head
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class BestSolution {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummyHead = new ListNode();
+        dummyHead.next = head;
+        ListNode iter = dummyHead;
+        while (iter != null && iter.next != null) {
+            while (iter.next != null && iter.next.val == val) {
+                iter.next = iter.next.next;
+            }
+            iter = iter.next;
+        }
+        return dummyHead.next;
+    }
+}
+/**
+ * Runtime: 1 ms, faster than 98.97% of Java online submissions for Remove
+ * Linked List Elements.
+ * Memory Usage: 43.2 MB, less than 89.70% of Java online submissions for Remove
+ * Linked List Elements.
+ */
