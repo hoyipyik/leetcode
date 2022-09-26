@@ -15,10 +15,11 @@
  * Given the head of a linked list and an integer val, remove all the nodes of
  * the linked list that has Node.val == val, and return the new head.
  */
-class Solution {
+class OldSolution {
     public ListNode removeElements(ListNode head, int val) {
         if (head == null)
             return null;
+
         while (true) {
             if (head.val == val)
                 head = head.next;
@@ -44,6 +45,20 @@ class Solution {
     }
 }
 
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        while (head != null && head.val == val)
+            head = head.next;
+        ListNode iter  = head;
+        while(iter != null){
+            while(iter.next != null && iter.next.val == val)
+                iter.next = iter.next.next;
+            iter = iter.next;
+        }
+        return head;
+    }
+}
+
 /**
  * Runtime: 1 ms, faster than 99.00% of Java online submissions for Remove
  * Linked List Elements.
@@ -51,21 +66,21 @@ class Solution {
  * Linked List Elements.
  */
 
-
 // Two pin method
-public class AnotherSolution {
+class AnotherSolution {
     public ListNode removeElements(ListNode head, int val) {
         ListNode result = new ListNode(-1);
-        result.next=head;
-        ListNode fast=head,slow=result;
-        while(fast!=null){
-            if(fast.val==val){
-                slow.next=fast.next;
-            }else{
-                slow=slow.next;
+        result.next = head;
+        ListNode fast = head, slow = result;
+        while (fast != null) {
+            if (fast.val == val) {
+                slow.next = fast.next;
+            } else {
+                slow = slow.next;
             }
-            fast=fast.next;
+            fast = fast.next;
         }
         return result.next;
     }
 }
+
