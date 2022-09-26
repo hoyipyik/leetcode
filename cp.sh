@@ -1,1 +1,1 @@
-cp "./runtime/env/runtime/Solution.java" "./Archive/array/$1.java"
+cp "./runtime/env/runtime/Solution.java" "./Archive/array/Linked List/$1.java"

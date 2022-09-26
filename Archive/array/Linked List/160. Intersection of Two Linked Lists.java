@@ -11,7 +11,7 @@ import java.util.List;
  * }
  * }
  */
-public class Solution {
+class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode a = headA;
         ListNode b = headB;
