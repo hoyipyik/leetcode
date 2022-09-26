@@ -100,7 +100,7 @@ class BestSolution {
         ListNode dummyHead = new ListNode();
         dummyHead.next = head;
         ListNode iter = dummyHead;
-        while (iter != null && iter.next != null) {
+        while (iter != null ) {
             while (iter.next != null && iter.next.val == val) {
                 iter.next = iter.next.next;
             }
