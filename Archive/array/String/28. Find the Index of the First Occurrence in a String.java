@@ -55,6 +55,8 @@ class Solution {
     }
 }
 
+
+
 /**
  * Runtime: 1 ms, faster than 66.34% of Java online submissions for Find the
  * Index of the First Occurrence in a String.

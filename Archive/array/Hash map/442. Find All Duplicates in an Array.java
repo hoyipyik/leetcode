@@ -43,7 +43,7 @@ import java.util.List;
  * Each element in nums appears once or twice.
  */
 
-class Solution {
+class OldSolution {
     public List<Integer> findDuplicates(int[] nums) {
         int len = nums.length;
         var map = new HashMap<Integer, Integer>(len);
@@ -66,4 +66,28 @@ class Solution {
  * Memory Usage: 71.5 MB, less than 8.02% of Java online submissions for Find
  * All Duplicates in an Array.
  * 
+ */
+
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        var ans = new ArrayList<Integer>();
+        int n = nums.length;
+        int[] dict = new int[n];
+        for(int i = 0; i < n; i ++){
+            dict[nums[i] - 1] ++;
+        }
+        
+        for(int i = 0; i < n; i ++){
+            if(dict[i] > 1) ans.add(i + 1);
+            
+        }
+        return ans;
+    }
+}
+
+/**
+ * Runtime: 8 ms, faster than 83.33% of Java online submissions for Find All
+ * Duplicates in an Array.
+ * Memory Usage: 68.1 MB, less than 28.16% of Java online submissions for Find
+ * All Duplicates in an Array.
  */

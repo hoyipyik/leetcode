@@ -1,3 +1,4 @@
+
 /**
  * 229. Majority Element II
  * Medium
@@ -34,8 +35,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
-class Solution {
+class OldSolution {
     public List<Integer> majorityElement(int[] nums) {
         var ans = new ArrayList<Integer>();
         var map = new HashMap<Integer, Integer>();
@@ -55,9 +55,27 @@ class Solution {
     }
 }
 
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        var ans = new ArrayList<Integer>();
+        var map = new HashMap<Integer, Integer>();
+        int threshold = nums.length / 3;
+        for(int i = 0; i < nums.length; i ++){
+            int holder = map.getOrDefault(nums[i], 0);
+            if(holder == -1) continue;
+            map.put(nums[i], holder + 1);
+            if(holder + 1 > threshold){
+                ans.add(nums[i]);
+                map.put(nums[i], -1);
+            }
+        }
+        return ans;
+    }
+}
+
 /**
- * Runtime: 15 ms, faster than 28.15% of Java online submissions for Majority
+ * Runtime: 12 ms, faster than 40.34% of Java online submissions for Majority
  * Element II.
- * Memory Usage: 45.6 MB, less than 96.72% of Java online submissions for
+ * Memory Usage: 50.6 MB, less than 33.07% of Java online submissions for
  * Majority Element II.
  */

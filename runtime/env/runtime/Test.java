@@ -1,18 +1,15 @@
-import java.security.DrbgParameters.Reseed;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 class Test{
     public static void main(String[] args) {
-        // Test obj = new Test();
-        // var holder = obj.reverseString("abc");
-        var listIn = new LinkedList<Integer>();
-        for (int i = 0; i < 4; i++) {
-            listIn.add(i);
+        String[] str = new String[]{"12","312", "3127"};
+        var stack = new LinkedList<String>();
+        for (int i = 0; i < str.length; i++) {
+            stack.push(str[i]);
         }
-        int holder = listIn.removeLast();
-        System.out.println(holder);
-        // listIn.forEach(System.out::println);
+        for (int i = 0; i < str.length; i++) {
+            System.err.println(stack.pop());
+        }
+        // System.out.println(stack.toString());
     }
 }
